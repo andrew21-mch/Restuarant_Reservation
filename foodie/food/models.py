@@ -1,3 +1,35 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+class Restaurant(models.Model):
+    owner = models.ForeignKey(User, on_delete= models.CASCADE)
+    name = models.CharField(max_length=256)
+    location = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.owner
+
+
+class Menu(models.Model):
+   name = models.CharField(max_length=256)
+   restuarant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+   price = models.IntegerField(max_length=10)
+
+   def __str__(self):
+       return self.pk
+
+class FeedBack(models.Model):
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.pk
+
+class Bookings(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    message = models.CharField(max_length=256)
+
+    def __str__(self):
+        return self.user.name
+
