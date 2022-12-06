@@ -7,3 +7,6 @@ def index(request):
 
 def food(request):
     return render(request, 'food.html')
+
+def resto(request):
+    return render(request, 'resto.html')
