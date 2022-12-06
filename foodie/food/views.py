@@ -6,3 +6,7 @@ def home(request):
     new = User.objects.all()
     return HttpResponse(f'<h1> welcome yoo</h1> <h2> three amigos</h2>')
 
+# Create your views here.
+
+def index(request):
+    return render(request, 'index.html')
