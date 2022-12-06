@@ -10,3 +10,6 @@ def food(request):
 
 def resto(request):
     return render(request, 'resto.html')
+
+def login(request):
+    return render(request, 'login.html')
