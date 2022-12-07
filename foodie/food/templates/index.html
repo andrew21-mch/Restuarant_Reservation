@@ -58,7 +58,7 @@
 
         <div class="col-md-6 offset-md-3">
             {% for search in searches %}
-            <p class="text-center">Your favourite {{search}} is at  <a href="{% url 'signup_client' %}">{{search.restuarant}}'s</a> restuarant</p>
+            <p class="text-center">Your favourite {{search}} is at  <a href="{% url 'login' %}">{{search.restuarant}}'s</a> restuarant</p>
             {% endfor %}
 
             {% for message in messages %}
