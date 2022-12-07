@@ -1,6 +1,10 @@
 from django.contrib.auth.models import User
-from django.shortcuts import render
+from django.contrib import messages
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
+
+from .models import Menu
+
 
 def home(request):
     new = User.objects.all()
@@ -63,4 +67,15 @@ def landing_page(request):
 # Create your views here.
 
 def index(request):
-    return render(request, 'index.html')
+    if request.method == 'POST':
+        query = request.POST['query']
+
+        if Menu.objects.filter(name=query).exists():
+            searches = Menu.objects.filter(name=query)
+            return render(request, 'index.html', {'searches':searches})
+
+        else:
+            messages.info(request, 'Oops Be like the no cook your food today oh! try another favourite')
+            return redirect('index')
+    else:
+        return render(request, 'index.html')
