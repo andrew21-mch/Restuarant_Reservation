@@ -48,7 +48,7 @@
     <header>
       <nav class="navbar navbar-expand-lg navbar-light ">
         <div class="container-fluid ">
-        <a class="navbar-brand " href="#">Foodie</a>
+        <a class="navbar-brand " href="{% url 'index' %}">Foodie</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -58,19 +58,19 @@
             <a class="nav-link active" aria-current="page" href="#">About Us</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Food</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Food</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Restaurant</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'resto_dashboard' %}">Restaurant</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Login</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>	
           <li class="nav-item">
-            <a class="nav-link" href="#"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
+            <a class="nav-link" href="{% url 'signup' %}"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
           </li>
                   
           </ul>		  
@@ -91,11 +91,11 @@
           <div class="card" style="width: 28rem;">
             <div class="card-body">
               <form>
-                <button type="button" class="btn btn-primary">Create User Account</button>
+                <button type="button" class="btn btn-primary"><a href="{% url 'signup_client' %}" style="decoration:none; color:white">Create User Account</a></button>
                 <br><br>
-                <button type="button" class="btn btn-secondary btn-lg">Create Restaurant Account</button>
+                <button type="button" class="btn btn-secondary btn-lg"><a href="{% url 'signup_resto' %}" style="decoration:none; color:white">Create Restaurant Account</a></button>
                 <br> <br> <br>
-                <p>Already have an account? <span><a href="">Login</a></span> </p>
+                <p>Already have an account? <span><a href="{% url 'login' %}">Login</a></span> </p>
 
               </form>
             </div>

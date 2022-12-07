@@ -22,10 +22,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link" href="#">Login</a>
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Register</a>
+                <a class="nav-link" href="{% url 'signup' %}">Register</a>
               </li>
           </ul>
         </div>
@@ -38,7 +38,7 @@
             <div class="col-md-6 offset-md-3 ">
                 <h1 class="text-center">Foodie</h1>
                 <p class="text-center">Search for your favorite food</p>
-                <form action="/search" method="POST">
+                <form method="POST">
                     {% csrf_token %}
                     <div class="input-group mb-3">
                         <input type="text" class="form-control" placeholder="Search for food" name="query">
@@ -53,8 +53,21 @@
     <!-- are you a restaurant owner, register -->
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <p class="text-center">Are you a restaurant owner? <a href="#">Register</a></p>
+            <p class="text-center">Are you a restaurant owner? <a href="{% url 'signup_resto' %}">Register</a></p>
         </div>
+
+        <div class="col-md-6 offset-md-3">
+            {% for search in searches %}
+            <p class="text-center">Your favourite {{search}} is at  <a href="{% url 'signup_client' %}">{{search.restuarant}}'s</a> restuarant</p>
+            {% endfor %}
+
+            {% for message in messages %}
+            <p class="text-center">{{message}}</p>
+            {% endfor %}
+
+
+        </div>
+
     </div>
     </div>
     <!-- bootstrap js -->
