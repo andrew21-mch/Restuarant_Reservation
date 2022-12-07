@@ -26,7 +26,10 @@ def login(request):
 
         if user is not None:
             auth.login(request, user)
-            return redirect('resto_dashboard')
+            if user.is_staff == True:
+                return redirect('resto_dashboard')
+            else:
+                return redirect('resto_client')
 
         else:
             messages.info(request, "wrong credentials please try again")
