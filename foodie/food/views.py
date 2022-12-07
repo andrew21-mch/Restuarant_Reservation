@@ -84,8 +84,8 @@ def create_menu(request):
 def create_table(request):
     return render(request, 'create_table.html')
 
-def landing_page(request):
-    return render(request, 'landing_page.html')
+def contact(request):
+    return render(request, 'contact.html')
 
 # Create your views here.
 

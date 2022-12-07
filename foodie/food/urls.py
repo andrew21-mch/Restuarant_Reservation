@@ -19,7 +19,7 @@ urlpatterns = [
     path('resto_menu', views.resto_menu, name='resto_menu'),
     path('create_menu', views.create_menu, name='create_menu'),
     path('create_table', views.create_table, name='create_table'),
-    path('landing_page', views.landing_page, name='landing_page'),
+    path('contact', views.contact, name='contact'),
 
     # path('about/', views.about, name='about'),
     # path('contact/', views.contact, name='contact'),
