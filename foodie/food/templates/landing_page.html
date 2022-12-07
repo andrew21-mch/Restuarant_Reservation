@@ -1,0 +1,153 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.84.0"> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Reserved Menus</title>
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  
+    
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
+
+    
+
+    <!-- Bootstrap core CSS -->
+<link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+
+  
+  <!-- Custom styles for this template -->
+  <link href="sidebars.css" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'styles/sidebars.css' %}">
+
+    
+  </head>
+  <body>
+    
+<header>
+
+    <div class="navigation">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <div class="container-fluid ">
+            <a class="navbar-brand " href="#">Foodie</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+              <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">About Us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Food</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Restaurant</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Contact</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Login</a>
+              </li>	
+              <li class="nav-item">
+                <a class="nav-link" href="#"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
+              </li>
+                      
+              </ul>		  
+            </div>
+            </div>
+          </nav>
+
+
+    </div>
+
+    <br><br>
+   
+      <main>
+        <div class="container text-center " style="margin-left: 10px;">
+          <div class="row">
+            <div class="col-5">
+                <p>Welcome To</p>
+                <h2>Foodie</h2>
+                <p>Where you get the best restaurants and also have the opportunity to secure your seats 
+                    and also your plate of food. Do you have a restaurant and intend to serve customers 
+                    in the most prestigous way? Or do you have amazing appetite to eat from the most
+                    classy chefs?  we go you covered.
+                </p> <br><br>
+                <a href="#" class="btn btn-primary">Create Menu</a>
+     
+            </div>
+            <div class="col-5" style="margin-left: 125px;">
+            
+                <center>
+                    <div class="row align-items-md-stretch">
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <img src={% static 'images/fufu.jpg' %} class="card-img-top" alt="...">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <img src={% static 'images/resto6.jpg' %} class="card-img-top" alt="...">
+                            </div>
+                        </div> <br> <br> <br> <br> <br>
+                        <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <img src={% static 'images/resto1.jpg' %} class="card-img-top" alt="...">
+                            </div>
+                          </div>
+                          <div class="col-md-6">
+                            <div class="card shadow-sm">
+                                <img src={% static 'images/rice.jpg' %} class="card-img-top" alt="...">
+                            </div>
+                      </div>
+                </center>
+            
+            </div>
+          </div>
+        </div>      
+        
+            
+      
+       
+      </main>
+      
+      
+          <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      
+
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+      
+  </body>
+</html>
