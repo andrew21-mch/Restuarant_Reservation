@@ -13,3 +13,12 @@ def resto(request):
 
 def login(request):
     return render(request, 'login.html')
+
+def signup(request):
+    return render(request, 'signup.html')
+
+def signup_client(request):
+    return render(request, 'signup_client.html')
+
+def signup_resto(request):
+    return render(request, 'signup_resto.html')
