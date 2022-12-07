@@ -37,16 +37,37 @@ def login(request):
         return render(request, 'login.html')
 
 def signup(request):
-    # if request.method == 'POST':
-    #     username = request.POST['username']
-    #     email = request.POST['password']
-    #     phone = request.POST['username']
-    #     password = request.POST['password']
+
     return render(request, 'signup.html')
 
 def signup_client(request):
 
-    return render(request, 'signup_client.html')
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        phone = request.POST['phone']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+
+        if password1 == password2:
+            if User.objects.filter(username=username).exists():
+                messages.info(request, 'username already taken')
+                return redirect('signup_client')
+            elif User.objects.filter(email=email).exists():
+                messages.info(request, 'email already exist')
+                return redirect('signup_client')
+
+            else:
+                user = User.objects.create_user(username=username, password=password1, first_name=phone, email=email, is_staff=False)
+                user.save()
+                return redirect('login')
+        else:
+
+            messages.info(request, 'password mismatched')
+            return redirect('signup_client')
+    else:
+        return render(request, 'signup_client.html')
 
 def signup_resto(request):
     return render(request, 'signup_resto.html')

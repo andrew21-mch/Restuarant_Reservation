@@ -67,10 +67,10 @@
             <a class="nav-link active" aria-current="page" href="#">Contact</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'index' %}">Login</a>
+            <a class="nav-link" href="{% url 'login' %}">Login</a>
           </li>	
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'index' %}"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
+            <a class="nav-link" href="{% url 'signup' %}"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
           </li>
                   
           </ul>		  
@@ -90,25 +90,29 @@
         <center>
           <div class="card" style="width: 28rem;">
             <div class="card-body">
-              <form>
+              <form method="POST">
+                {% csrf_token %}
                 <div class="form-group">
-                    <input type="text" class="form-control" id="usr" placeholder="Enter Name">
+                    <input type="text" class="form-control" id="usr" name="username" placeholder="Enter Name">
                   </div>
                 <div class="mb-3">
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Address">
+                  <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Email Address">
                 </div>
                 <div class="form-group">
-                    <input type="tel" class="form-control" id="tel" placeholder="Phone Number">
+                    <input type="text" name="phone" class="form-control" id="tel" placeholder="Phone Number">
                   </div>
                 <div class="mb-3">
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
+                  <input type="password" name="password1" class="form-control" id="exampleInputPassword1" placeholder="Enter Password">
                 </div>
                 <div class="mb-3">
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
+                    <input type="password" name="password2" class="form-control" id="exampleInputPassword1" placeholder="Confirm Password">
                   </div>
                 <button type="submit" class="btn btn-primary">Create Account</button>
                 <br> <br> <br>
-                <p>Already have an account? <span><a href="">Login</a></span> </p>
+                <p>Already have an account? <span><a href="{% url 'login' %}">Login</a></span> </p>
+                {% for message in messages %}
+                <p style="color: orange">{{message}}</p>
+                {% endfor %}
 
               </form>
             </div>
