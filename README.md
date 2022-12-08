@@ -1,5 +1,11 @@
 # Restuarant_Reservation
 This is a potfolio project from alx students that will help reserve local dishes for customer for registered restuarants
+Linkt to blog artilce: https://machinda.hashnode.dev/restaurant-reservation-web-application-foodie
+Deployed site: (for now follow the instructions to run locally)  https://github.com/Nicodona/Restuarant_Reservation
+Authors LinkedIn: 
+- Nfon Andrew(https://www.linkedin.com/in/nfon-andrew-7703a11a0/)
+- Njei Nicodemus(https://www.linkedin.com/in/njei-nicodemus-281a7b1b3/)
+- Lukong Anne (https://www.linkedin.com/in/lukong-anne/)
 
 ## Getting Started
 
@@ -52,6 +58,11 @@ To start the server
 python manage.py runserver
 ```
 
+## Usage
+* Foodie is used by Restaurant owners to showcase their restaurant on the application as well as display thier menu.
+* Foodie is used by User's to book food from a restaurant and can as well reserve seats.
+
+
 ## Built With
 
 * [Django](https://www.djangoproject.com/) - The web framework used
@@ -62,6 +73,10 @@ python manage.py runserver
 * **Nicodona** - *Initial work* - [Nicodona](https://github.com/Nicodona)
 * **Lukong123** - *Initial work* - [Lukong123](https://github.com/Lukong123)
 * **Andrew21-mch** - *Initial work* - [Andrew21-mch](https://github.com/Andrew21-mch)
+
+## Related projects
+* https://eatapp.co/
+* https://www.kayak.com/restaurants
 
 ## License
 
