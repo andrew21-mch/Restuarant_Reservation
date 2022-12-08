@@ -1,6 +1,8 @@
 from django.urls import path
 from . import views
 
+
+# patterns to view on the browser
 urlpatterns = [
     path('food', views.food, name='food'),
     path('resto', views.resto, name='resto'),
