@@ -1,7 +1,7 @@
 # Restuarant_Reservation
-This is a potfolio project from alx students that will help reserve local dishes for customer for registered restuarants
-Linkt to blog artilce: https://machinda.hashnode.dev/restaurant-reservation-web-application-foodie
-Deployed site: (for now follow the instructions to run locally)  https://github.com/Nicodona/Restuarant_Reservation
+This is a potfolio project from alx students that will help reserve local dishes and/or seats for customer for registered restuarants.
+* Linkt to blog artilce: https://machinda.hashnode.dev/restaurant-reservation-web-application-foodie
+* Deployed site: (for now follow the instructions to run locally)  https://github.com/Nicodona/Restuarant_Reservation
 Authors LinkedIn: 
 - Nfon Andrew(https://www.linkedin.com/in/nfon-andrew-7703a11a0/)
 - Njei Nicodemus(https://www.linkedin.com/in/njei-nicodemus-281a7b1b3/)
