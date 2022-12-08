@@ -1,5 +1,5 @@
 # Restuarant_Reservation
-![404 page](images/landing.png?raw=true "Title")
+![landing page](images/landing.png?raw=true "Title")
 This is a potfolio project from alx students that will help reserve local dishes and/or seats for customer for registered restuarants.
 * Linkt to blog artilce: https://machinda.hashnode.dev/restaurant-reservation-web-application-foodie
 * Deployed site: (for now follow the instructions to run locally)  https://github.com/Nicodona/Restuarant_Reservation
@@ -67,7 +67,14 @@ python manage.py runserver
 ## Built With
 
 * [Django](https://www.djangoproject.com/) - The web framework used
-* [Django Rest Framework](https://www.django-rest-framework.org/) - The web framework used
+* [Bootstrap5](https://www.getbootstrap.com/) - The CSS framework used
+We used Django for our project because we were comfortable with it even though not everyone but as a team we worked to make the problem be what it is. 
+We equally used the Bootstrap to ease us with our styling. This was a challenge to some of us but with effort it was possible.A
+
+## Feautures
+![signup page](images/signup.png?raw=true "Title")
+* Login and Registration was implemented
+* There was the possibility to search for food.
 
 ## Authors
 
