@@ -3,11 +3,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0"> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,15 +11,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  
-    
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-
-
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<!-- Style from bootstrap -->
 <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -40,19 +31,12 @@
       }
     }
   </style>
-
-  
   <!-- Custom styles for this template -->
-  <link href="sidebars.css" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'styles/sidebars.css' %}">
-
-    
   </head>
-  <body>
-    
-<header>
-
-    <div class="navigation">
+  <body> 
+    <header>
+        <div class="navigation">
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid ">
             <a class="navbar-brand " href="#">Foodie</a>
@@ -78,14 +62,11 @@
               </li>	
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'signup' %}"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
-              </li>
-                      
+              </li>      
               </ul>		  
             </div>
             </div>
           </nav>
-
-
     </div>
 
     <br><br>
@@ -104,8 +85,8 @@
                 <a href="#" class="btn btn-primary">Create Menu</a>
      
             </div>
+            <!-- Second gridlike column -->
             <div class="col-5" style="margin-left: 125px;">
-            
                 <center>
                     <form method="POST">
                         {% csrf_token %}
@@ -124,8 +105,6 @@
                         {% for message in messages %}
                         <p class="text-center">{{message}}</p>
                         {% endfor %}
-            
-            
                     </div>
                     <div class="row align-items-md-stretch">
                         <div class="col-md-6">
@@ -149,24 +128,10 @@
                             </div>
                       </div>
                 </center>
-            
             </div>
           </div>
         </div>      
-        
-            
-      
-       
       </main>
-      
-      
-          <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-      
-
-
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
+      <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

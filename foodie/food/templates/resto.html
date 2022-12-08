@@ -3,11 +3,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0"> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,15 +12,13 @@
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
   
-    <title>Album example · Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-
-    
 
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<!-- Bootstrap Styles -->
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -41,13 +34,9 @@
         }
       }
     </style>
-
-    
   </head>
   <body>
-    
-<header>
-
+    <header>
     <div class="navigation">
         <nav class="navbar navbar-expand-lg navbar-light ">
             <div class="container-fluid ">
@@ -74,38 +63,29 @@
               </li>	
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'signup' %}"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
-              </li>
-                      
+              </li>       
               </ul>		  
             </div>
             </div>
           </nav>
-
-
     </div>
 
-    <br><br>
-    
+    <br><br> 
     <div class="search-food">
         <form class="d-flex" role="search">
           <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
-
   <div class="album py-5 bg-light">
     <div class="container">
-
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
             <img src={% static 'images/resto6.jpg' %} class="card-img-top" alt="...">
-
             <div class="card-body">
                 <h5 class="card-title">Mummy's Kitchen</h5>
-
               <p class="card-text">Location: ENS Street</p>
-            
             </div>
           </div>
         </div>
@@ -114,9 +94,7 @@
             <img src={% static 'images/resto1.jpg' %} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Mummy's Kitchen</h5>
-
               <p class="card-text">Location: ENS Street</p>
-            
             </div>
           </div>
         </div>
@@ -125,56 +103,38 @@
             <img src={% static 'images/resto2.jpg' %} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Mummy's Kitchen</h5>
-
               <p class="card-text">Location: ENS Street</p>
-            
             </div>
           </div>
         </div>
-
         <div class="col">
           <div class="card shadow-sm">
             <img src={% static 'images/resto2.jpg' %} class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">Mummy's Kitchen</h5>
-
               <p class="card-text">Location: ENS Street</p>
-            
             </div>
           </div>
         </div>
         <div class="col">
           <div class="card shadow-sm">
             <img src={% static 'images/resto4.jpg' %} class="card-img-top" alt="...">
-
-
             <div class="card-body">
                 <h5 class="card-title">Mummy's Kitchen</h5>
-
               <p class="card-text">Location: ENS Street</p>
-            
             </div>
           </div>
         </div>
                 <div class="col">
           <div class="card shadow-sm">
             <img src={% static 'images/resto1.jpg' %} class="card-img-top" alt="...">
-
             <div class="card-body">
                 <h5 class="card-title">Mummy's Kitchen</h5>
-
               <p class="card-text">Location: ENS Street</p>
-            
             </div>
           </div>
         </div>
-        
-
 </main>
-
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>   
   </body>
 </html>

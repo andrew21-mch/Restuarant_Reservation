@@ -20,10 +20,5 @@ urlpatterns = [
     path('create_menu', views.create_menu, name='create_menu'),
     path('create_table', views.create_table, name='create_table'),
     path('contact', views.contact, name='contact'),
-
-    # path('about/', views.about, name='about'),
-    # path('contact/', views.contact, name='contact'),
     path('', views.index, name='index'),
-
-    # path('', views.home, name='home')
 ]

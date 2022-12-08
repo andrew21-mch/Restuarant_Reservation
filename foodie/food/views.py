@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from .models import Menu
 
 
+# Views goes here
+
 def home(request):
     new = User.objects.all()
     return HttpResponse(f'<h1> welcome yoo</h1> <h2> three amigos</h2>')
@@ -136,8 +138,6 @@ def create_table(request):
 
 def contact(request):
     return render(request, 'contact.html')
-
-# Create your views here.
 
 def index(request):
     if request.method == 'POST':
