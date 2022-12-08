@@ -1,4 +1,5 @@
 # Restuarant_Reservation
+![404 page](images/landing.png?raw=true "Title")
 This is a potfolio project from alx students that will help reserve local dishes and/or seats for customer for registered restuarants.
 * Linkt to blog artilce: https://machinda.hashnode.dev/restaurant-reservation-web-application-foodie
 * Deployed site: (for now follow the instructions to run locally)  https://github.com/Nicodona/Restuarant_Reservation
