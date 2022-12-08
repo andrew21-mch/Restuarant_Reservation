@@ -69,7 +69,7 @@ def signup_client(request):
                 return redirect('login')
         else:
 
-            messages.info(request, 'password mismatched')
+            messages.info(request, 'password mismatched') # message if there is password mismatched
             return redirect('signup_client')
     else:
         return render(request, 'signup_client.html')
@@ -89,7 +89,7 @@ def signup_resto(request):
                 messages.info(request, 'restuarent already exist')
                 return redirect('signup_resto')
             elif User.objects.filter(email=email).exists():
-                messages.info(request, 'email already exist')
+                messages.info(request, 'email already exist') # gives an error if email already exist
                 return redirect('signup_resto')
 
             else:
