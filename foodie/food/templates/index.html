@@ -37,10 +37,10 @@
         <!-- Custom styles for this template -->
         <link rel="stylesheet" href="{% static 'styles/sidebars.css' %}">
         </head>
-<body> 
+<body class="bg-light">
     <header>
         <div class="navigation">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light " style="background-color: #eecb9d;">
             <div class="container-fluid ">
             <a class="navbar-brand " href="#">Foodie</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -75,82 +75,177 @@
 
     </div>
     </header>
-
-    <br><br>
-    <div class="container">
-    
-        <div class="row mt-5">
-            <!-- center div -->
-
-            <div class="col-md-6 offset-md-3 ">
-                <h1 class="text-center">Foodie</h1>
-                <p class="text-center">Search for your favorite food</p>
-                <form method="POST">
-                    {% csrf_token %}
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Search for food" name="query">
-                        <div class="input-group-append">
-                            <button class="btn btn-outline-secondary" type="submit">Search</button>
-                        </div>
-                    </div>
-                </form>
-                <div class="col-md-6 offset-md-3">
-                    {% for search in searches %}
-                    <p class="text-center">Your favourite {{search}} is at  <a href="{% url 'signup_client' %}">{{search.restuarant}}'s</a> restuarant</p>
-                    {% endfor %}
-        
-                    {% for message in messages %}
-                    <p class="text-center">{{message}}</p>
-                    {% endfor %}
+    <main>
+      <div class="col-md-6 offset-md-3 mt-5 ">
+        <h1 class="text-center">Foodie</h1>
+        <p class="text-center">Search for your favorite food</p>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" placeholder="Search for food" name="query">
+                <div class="input-group-append">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
                 </div>
-              </li>
-    </div>
-
-    <br><br>
-   
-      <main>
-        <div class="container text-center " style="margin-left: 10px;">
-          <div class="row">
-            <div class="col-5">
-                <p>Welcome To</p>
-                <h2>Foodie</h2>
-                <p>Where you get the best restaurants and also have the opportunity to secure your seats 
-                    and also your plate of food. Do you have a restaurant and intend to serve customers 
-                    in the most prestigous way? Or do you have amazing appetite to eat from the most
-                    classy chefs?  we go you covered.
-                </p> <br><br>
-                <a href="#" class="btn btn-primary">Create Menu</a>
-     
             </div>
-            <!-- Second gridlike column -->
-            <div class="col-5" style="margin-left: 125px;">
-                <center>
-                    <div class="row align-items-md-stretch">
-                        <div class="col-md-6">
-                            <div class="card shadow-sm">
-                                <img src={% static 'images/fufu.jpg' %} class="card-img-top" alt="...">
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card shadow-sm">
-                                <img src={% static 'images/resto6.jpg' %} class="card-img-top" alt="...">
-                            </div>
-                        </div> <br> <br> <br> <br> <br>
-                        <div class="col-md-6">
-                            <div class="card shadow-sm">
-                                <img src={% static 'images/resto1.jpg' %} class="card-img-top" alt="...">
-                            </div>
-                          </div>
-                          <div class="col-md-6">
-                            <div class="card shadow-sm">
-                                <img src={% static 'images/rice.jpg' %} class="card-img-top" alt="...">
-                            </div>
-                      </div>
-                </center>
+        </form>
+        <div class="col-md-6 offset-md-3">
+            {% for search in searches %}
+            <p class="text-center">Your favourite {{search}} is at  <a href="{% url 'signup_client' %}">{{search.restuarant}}'s</a> restuarant</p>
+            {% endfor %}
+
+            {% for message in messages %}
+            <p class="text-center">{{message}}</p>
+            {% endfor %}
+        </div>
+      </li>       
+    </div>
+      <!-- sections for the landing page of a restaurant website, showing the dishes,and features of the website and a footer -->
+      <section class="jumbotron text-center">
+        <div class="">
+          <h1 class="jumbotron-heading">Find your favorite restaurant</h1>
+          <p class="lead text-muted">We have a wide range of restaurants to choose from, and we are sure you will find your favorite restaurant here.</p>
+          <p>
+            <a href="{% url 'resto_client' %}" class="btn btn-primary my-2" style="width: 200px;">Restaurants</a>
+            <a href="{% url 'food' %}" class="btn btn-secondary my-2 " style="width: 200px;">Food</a>
+          </p>
+        </div>
+      </section>
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+          <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src={% static 'images/resto6.jpg' %} class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">Don't feel like cooking? No worries, we have a wide range of restaurants to choose from, and we are sure you will find your favorite restaurant here.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src={% static 'images/resto6.jpg' %} class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">afraid that food will get cold before you get home? No worries, we have a delivery service for you, you just have to order and wait for your food to be delivered to your doorstep.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card shadow-sm">
+                <img src={% static 'images/resto6.jpg' %} class="card-img-top" alt="...">
+                <div class="card-body">
+                  <p class="card-text">We have a wide range of restaurants to choose from, and we are sure you will find your favorite restaurant here.</p>
+                </div>
+              </div>
             </div>
           </div>
-        </div>      
-      </main>
+        </div>
+      </div>
+
+      <!-- What people are saying -->
+      <div class = "container jumbotron bg-light">
+        <div class="row">
+          <div class="col-md-12">
+            <h2 class="text-center">What people are saying</h2>
+            <div class="carousel slide" data-ride="carousel" id="quote-carousel">
+              <!-- Bottom Carousel Indicators -->
+              <ol class="carousel-indicators">
+                <li data-target="#quote-carousel" data-slide-to="0" class="active"></li>
+                <li data-target="#quote-carousel" data-slide-to="1"></li>
+                <li data-target="#quote-carousel" data-slide-to="2"></li>
+              </ol>
+
+              <!-- Carousel Slides / Quotes -->
+              <div class="carousel-inner text-center">
+
+                <!-- Quote 1 -->
+                <div class="carousel-item active">
+                  <blockquote>
+                    <div class="row">
+                      <div class="col-sm-8 mx-auto">
+                        <p>Foodie is the best website I have ever used, I can order food from my favorite restaurant and have it delivered to my doorstep.</p>
+                        <small>Someone famous</small>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+                <!-- Quote 2 -->
+                <div class="carousel-item">
+                  <blockquote>
+                    <div class="row">
+                      <div class="col-sm-8 mx-auto">
+                        <p>Foodie is the best website I have ever used, I can order food from my favorite restaurant and have it delivered to my doorstep.</p>
+                        <small>Someone famous</small>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+                <!-- Quote 3 -->
+                <div class="carousel-item">
+                  <blockquote>
+                    <div class="row">
+                      <div class="col-sm-8 mx-auto">
+                        <p>Foodie is the best website I have ever used, I can order food from my favorite restaurant and have it delivered to my doorstep.</p>
+                        <small>Someone famous</small>
+                      </div>
+                    </div>
+                  </blockquote>
+                </div>
+              </div>
+
+              <!-- Carousel Buttons Next/Prev -->
+              <a data-slide="prev" href="#quote-carousel" class="carousel-control-prev colored"><i class="fa fa-chevron-left"></i></a>
+              <a data-slide="next" href="#quote-carousel" class="carousel-control-next"><i class="fa fa-chevron-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- footer  with dark background and links to social media -->
+      <footer class="footer mt-auto py-3 bg-dark">
+        <!-- 3 columns -->
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4">
+              <h5>Foodie</h5>
+              <p>Foodie is the best website I have ever used, I can order food from my favorite restaurant and have it delivered to my doorstep.</p>
+            </div>
+            <div class="col-md-4">
+              <h5>Links</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted text-decoration-none" href="#">Restaurants</a></li>
+                <li><a class="text-muted text-decoration-none" href="#">Food</a></li>
+                <li><a class="text-muted text-decoration-none" href="#">About Us</a></li>
+                <li><a class="text-muted text-decoration-none" href="#">Contact Us</a></li>
+              </ul>
+            </div>
+            <div class="col-md-4">
+              <h5>Follow Us</h5>
+              <ul class="list-unstyled text-small">
+                <li><a class="text-muted text-decoration-none" href="#"><i class="fab fa-facebook-square"></i> Facebook</a></li>
+                <li><a class="text-muted text-decoration-none" href="#"><i class="fab fa-twitter-square"></i> Twitter</a></li>
+                <li><a class="text-muted text-decoration-none" href="#"><i class="fab fa-instagram-square"></i> Instagram</a></li>
+                <li><a class="text-muted text-decoration-none" href="#"><i class="fab fa-youtube-square"></i> Youtube</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+        
+      </footer>
+
+      
+
+    </main>
+      
       <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- jquery -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+      <!-- bootstrap js -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <!-- font awesome -->
+      <script src="https://kit.fontawesome.com/yourcode.js" crossorigin="anonymous"></script>
   </body>
 </html>
