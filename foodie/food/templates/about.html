@@ -3,18 +3,19 @@
 <!doctype html>
 <html lang="en">
   <head>
-   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>resto</title>
+    <title>Food</title>
     <!-- bootstrap cdn -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <!-- fontawesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-
+    
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -34,10 +35,8 @@
         }
       }
     </style>
-
-    
   </head>
-  <body>
+  <body> 
     <header>
       <div class="navigation">
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -75,78 +74,75 @@
 
   </div>
   </header>
-
-    <br><br>
-    <div class="search-food">
-      <form method="POST">
-        {% csrf_token %}
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Search for food" name="query">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="submit">Search</button>
-            </div>
-        </div>
-    </form>
-      </div>
   <div class="album py-5 bg-light">
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="text-center">About Us</h1>
+            </div>
+        </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">
-            <img src={% static 'images/resto6.jpg' %} class="card-img-top" alt="...">
+            <img src={% static 'images/fufu.jpg' %} class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
+                <h5 class="card-title">Lukong Anne</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium voluptates porro, necessitatibus alias assumenda nulla quibusdam aperiam et aut sequi quae nostrum beatae neque odio pariatur enim nobis hic totam.</p>
+              <div class="row m-2">
+               <a href="" class="m-2">
+                 <i class="fa fa-twitter"></i>
+                </a>
+                <a href="" class="m-2">
+                 <i class="fa fa-github"></i>
+                </a>
+                <a href="" class="m-2">
+                 <i class="fa fa-linkedin"></i>
+                </a>
           </div>
+        </div>
+        </div>
         </div>
         <div class="col">
           <div class="card shadow-sm">
-            <img src={% static 'images/resto1.jpg' %} class="card-img-top" alt="...">
+            <img src={% static 'images/fufu.jpg' %} class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
+                <h5 class="card-title">Nfon Andrew</h5>
+              <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Totam nulla eius blanditiis doloribus molestiae enim fugit, minus, unde consequuntur itaque corporis eos expedita amet dolorem odit quidem recusandae dolor quasi?</p>
+              <div class="row m-2">
+                <a href="" class="m-2">
+                  <i class="fa fa-twitter"></i>
+                 </a>
+                 <a href="" class="m-2">
+                  <i class="fa fa-github"></i>
+                 </a>
+                 <a href="" class="m-2">
+                  <i class="fa fa-linkedin"></i>
+                 </a>
+               </div>
+             </div>
             </div>
           </div>
-        </div>
         <div class="col">
           <div class="card shadow-sm">
-            <img src={% static 'images/resto2.jpg' %} class="card-img-top" alt="...">
+            <img src={% static 'images/fufu.jpg' %} class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src={% static 'images/resto2.jpg' %} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src={% static 'images/resto4.jpg' %} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src={% static 'images/resto1.jpg' %} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
+                <h5 class="card-title">Njei Nicodemus</h5>
+              <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet dolorem minima totam ad molestias eius illum aliquid necessitatibus quo reprehenderit tempora ratione corporis odit quisquam minus voluptatum, aperiam libero iusto.</p>
+              <div class="row m-2">
+                <a href="" class="m-2">
+                  <i class="fa fa-twitter"></i>
+                 </a>
+                 <a href="" class="m-2">
+                  <i class="fa fa-github"></i>
+                 </a>
+                 <a href="" class="m-2">
+                  <i class="fa fa-linkedin"></i>
+                 </a>
+               </div>
             </div>
           </div>
         </div>
 </main>
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>  
   </body>
 </html>

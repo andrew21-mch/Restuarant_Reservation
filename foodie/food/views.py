@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from .models import Menu
 
 
+# Views goes here
+
 def home(request):
     new = User.objects.all()
     return HttpResponse(f'<h1> welcome yoo</h1> <h2> three amigos</h2>')
@@ -67,13 +69,39 @@ def signup_client(request):
                 return redirect('login')
         else:
 
-            messages.info(request, 'password mismatched')
+            messages.info(request, 'password mismatched') # message if there is password mismatched
             return redirect('signup_client')
     else:
         return render(request, 'signup_client.html')
 
 def signup_resto(request):
-    return render(request, 'signup_resto.html')
+    if request.method == 'POST':
+        username = request.POST['username']
+        email = request.POST['email']
+        location = request.POST['location']
+        phone = request.POST['phone']
+        password1 = request.POST['password1']
+        password2 = request.POST['password2']
+
+
+        if password1 == password2:
+            if User.objects.filter(username=username).exists():
+                messages.info(request, 'restuarent already exist')
+                return redirect('signup_resto')
+            elif User.objects.filter(email=email).exists():
+                messages.info(request, 'email already exist') # gives an error if email already exist
+                return redirect('signup_resto')
+
+            else:
+                user = User.objects.create_user(username=username, password=password1, first_name=phone, last_name=location, email=email, is_staff=True)
+                user.save()
+                return redirect('login')
+        else:
+
+            messages.info(request, 'password mismatched')
+            return redirect('signup_resto')
+    else:
+        return render(request, 'signup_resto.html')
 
 def resto_client(request):
     return render(request, 'resto_client.html')
@@ -112,8 +140,8 @@ def landing_page(request):
     return render(request, 'landing_page.html')
 def contact(request):
     return render(request, 'contact.html')
-
-# Create your views here.
+def about(request):
+    return render(request, 'about.html')
 
 def index(request):
     if request.method == 'POST':

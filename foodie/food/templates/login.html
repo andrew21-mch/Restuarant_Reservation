@@ -3,11 +3,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.84.0"> -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,16 +11,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <!-- jquery -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-  
-    <title>Album example · Bootstrap v5.0</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/album/">
-
-    
 
     <!-- Bootstrap core CSS -->
 <link href="../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
+<!-- Bootstrap CSS -->
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -41,43 +33,45 @@
         }
       }
     </style>
-
-    
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-light ">
-        <div class="container-fluid ">
-        <a class="navbar-brand " href="{% url 'index' %}">Foodie</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav ">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Food</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{% url 'resto_dashboard' %}">Restaurant</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Contact</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'login' %}">Login</a>
-          </li>	
-          <li class="nav-item">
-            <a class="nav-link" href="{% url 'signup' %}"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
-          </li>
-                  
-          </ul>		  
-        </div>
-        </div>
-      </nav>
-    </header>
+      <div class="navigation">
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+          <div class="container-fluid ">
+          <a class="navbar-brand " href="#">Foodie</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+            <ul class="navbar-nav ">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'about' %}">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'food' %}">Food</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'resto_client' %}">Restaurants</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="{% url 'contact' %}">Contact Us</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>	
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'signup' %}"> <button type="button" class="btn btn-success btn-sm">Sign UP</button></a>
+            </li>
+                    
+            </ul>		  
+          </div>
+          </div>
+        </nav>
+
+
+  </div>
+  </header>
     <main class="container">
         <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
           <div class="col-md-6 px-0">
@@ -99,13 +93,13 @@
                   <input type="password" class="form-control" name="password" id="exampleInputPassword1" placeholder="Password">
                 </div>
                 
-                <button type="submit" class="btn btn-primary">Login</button>
+                <a class="nav-link" href="#"> <button type="button" class="btn btn-primary">Login</button></a>
+
                 <br> <br> <br>
-                <p>Don't yet have an account?  <span><a href="">Sign Up</a></span> </p>
+                <p>Don't yet have an account?  <span><a href="{% url 'signup' %}">Sign Up</a></span> </p>
                 {% for message in messages %}
                 <p style="color: orange ">{{message}}!</p>
                 {% endfor %}
-
               </form>
             </div>
           </div>
@@ -113,10 +107,6 @@
         </center>
     
 </main>
-
-
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-
-      
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>  
   </body>
 </html>

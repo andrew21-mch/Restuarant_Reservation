@@ -1,10 +1,11 @@
 from django.urls import path
 from . import views
 
+
+# patterns to view on the browser
 urlpatterns = [
     path('food', views.food, name='food'),
     path('resto', views.resto, name='resto'),
-    path('contact', views.contact, name='contact'),
     path('login', views.login, name='login'),
     path('signup', views.signup, name='signup'),
     path('signup_client', views.signup_client, name='signup_client'),
@@ -20,11 +21,7 @@ urlpatterns = [
     path('resto_menu', views.resto_menu, name='resto_menu'),
     path('create_menu', views.create_menu, name='create_menu'),
     path('create_table', views.create_table, name='create_table'),
-    path('landing_page', views.landing_page, name='landing_page'),
-
-    # path('about/', views.about, name='about'),
-    # path('contact/', views.contact, name='contact'),
+    path('contact', views.contact, name='contact'),
     path('', views.index, name='index'),
-
-    # path('', views.home, name='home')
+    path('about', views.about, name='about'),
 ]
