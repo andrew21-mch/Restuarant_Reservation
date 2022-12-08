@@ -110,6 +110,8 @@ def create_table(request):
 
 def landing_page(request):
     return render(request, 'landing_page.html')
+def contact(request):
+    return render(request, 'contact.html')
 
 # Create your views here.
 
@@ -126,3 +128,4 @@ def index(request):
             return redirect('index')
     else:
         return render(request, 'index.html')
+    
