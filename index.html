@@ -74,7 +74,7 @@
     </div>
     </header>
     <main>
-      <div class="col-md-6 offset-md-3 ">
+      <div class="col-md-6 offset-md-5">
         <h1 class="text-center">Foodie</h1>
         <p class="text-center">Search for your favorite food</p>
         <form method="POST">
@@ -86,15 +86,6 @@
                 </div>
             </div>
         </form>
-        <div class="col-md-6 offset-md-3">
-            <!-- {% for search in searches %} -->
-            <p class="text-center">Your favourite {{search}} is at  <a href="{% url 'signup_client' %}">{{search.restuarant}}'s</a> restuarant</p>
-            <!-- {% endfor %} -->
-
-            <!-- {% for message in messages %} -->
-            <p class="text-center">{{message}}</p>
-            <!-- {% endfor %} -->
-        </div>
       </li>       
     </div>
       <!-- sections for the landing page of a restaurant website, showing the dishes,and features of the website and a footer -->
