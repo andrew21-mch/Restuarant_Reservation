@@ -47,21 +47,20 @@
         {% endif %}
   </div>
   </header>
-
-    <br><br>
-    <div class="search-food">
+    <div class="album py-5 bg-light">
+      <div class="container">
+    <div class="search-food mb-3">
       <form method="POST">
         {% csrf_token %}
-        <div class="input-group mb-3">
+        <div class="input-group w-50 m-auto">
             <input type="text" class="form-control" placeholder="Search for food" name="query">
             <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit">Search</button>
             </div>
         </div>
-    </form>
+    </form> 
       </div>
-  <div class="album py-5 bg-light">
-    <div class="container">
+
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
         <div class="col">
           <div class="card shadow-sm">

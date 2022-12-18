@@ -9,9 +9,16 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{% url 'client_food' %}">Home</a>
           </li>
+          {% if user.is_staff  %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'resto_dashboard' %}">Profile</a>
           </li>
+            {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'resto_client' %}">Profile</a>
+              </li>
+            {% endif %}
+
           <li class="nav-item">
             <a class="nav-link" href="">Orders</a>
           </li>
