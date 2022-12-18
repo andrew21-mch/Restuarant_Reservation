@@ -197,7 +197,25 @@ def contact(request):
     return render(request, 'contact.html')
 def about(request):
     return render(request, 'about.html')
-
+def search_food(request):
+    query = request.GET.get('query')
+    if(Menu.objects.filter(name__icontains=query).exists()):
+        food = Menu.objects.filter(name__icontains=query)
+        return render(request, 'client_food.html', {'food': food})
+    else:
+        messages.info(request, 'Ooops, Sorry we dont have that food today, try another favourite')
+        return redirect('client_food')
+def search_resto(request):
+    query = request.GET.get('query')
+    if(query == '' or query == None):
+        restos = Restaurant.objects.all()
+        return render(request, 'resto_client.html', {'restos': restos})
+    if(Restaurant.objects.filter(name__icontains=query).exists() or Restaurant.objects.filter(location__icontains=query).exists()):
+        resto = Restaurant.objects.filter(name__icontains=query)
+        return render(request, 'resto_client.html', {'restos': resto})
+    else:
+        messages.info(request, 'Ooops, Sorry we dont have that restaurant today, try another favourite')
+        return redirect('resto_client')
 def index(request):
     if request.method == 'POST':
         query = request.POST['query']

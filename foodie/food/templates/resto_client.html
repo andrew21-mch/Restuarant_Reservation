@@ -50,10 +50,10 @@
     <div class="album py-5 bg-light">
       <div class="container">
     <div class="search-food mb-3">
-      <form method="POST">
+      <form method="GET" action="{% url 'search_resto' %}">
         {% csrf_token %}
         <div class="input-group w-50 m-auto">
-            <input type="text" class="form-control" placeholder="Search for food" name="query">
+            <input type="text" class="form-control" placeholder="Search for restaurant" name="query">
             <div class="input-group-append">
                 <button class="btn btn-outline-secondary" type="submit">Search</button>
             </div>
@@ -61,62 +61,34 @@
     </form> 
       </div>
 
+      {% for message in messages %}
+      <div class="alert alert-warning" role="alert">
+        {{ message }}
+      </div>
+      {% endfor %}
+
+      {% if restos %}
+      <div class="success">
+        <h3>Restaurants found: {{ restos.count }}</h3>
+      </div>
       <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+          
+        {% for resto in restos %}
         <div class="col">
           <div class="card shadow-sm">
             <img src={% static 'images/resto6.jpg' %} class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
+                <h5 class="card-title">{{ resto.name }}</h5>
+              <p class="card-text">Location: {{ resto.location }}</p>
             </div>
           </div>
         </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src={% static 'images/resto1.jpg' %} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
-          </div>
+        {% endfor %}
+        {% else %}
+        <h3>No restaurants found</h3>
+        {% endif %}
         </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src={% static 'images/resto2.jpg' %} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
-          </div>
-        </div>
-
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src={% static 'images/resto2.jpg' %} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src={% static 'images/resto4.jpg' %} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card shadow-sm">
-            <img src={% static 'images/resto1.jpg' %} class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">Mummy's Kitchen</h5>
-              <p class="card-text">Location: ENS Street</p>
-            </div>
-          </div>
-        </div>
+        
 </main>
     <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
   </body>
