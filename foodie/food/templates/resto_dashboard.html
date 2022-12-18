@@ -63,7 +63,7 @@
                 <a class="nav-link" href="#">Mummy's Kitchen</a>
               </li>	
               <li class="nav-item">
-                <a class="nav-link" href="#"> <button type="button" class="btn btn-success btn-sm">Logout</button></a>
+                <a class="nav-link btn btn-success" href="{% url 'logout' %}">Logout</a>
               </li>    
               </ul>		  
             </div>
@@ -180,8 +180,15 @@
                           </div>
                         </div>
                       </div>
+
+                      <div>
+                        <a href="{% url 'create_table' %}" class="btn btn-secondary mt-5">Create Table</a>
+                        <!-- add menu -->
+                        <a href="{% url 'create_menu' %}" class="btn btn-secondary mt-5">Create Menu</a>
+                      </div>
                 </center>
             
+
             </div>
           </div>
         </div>      

@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.shortcuts import render, redirect
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
 from .models import Menu
@@ -121,6 +122,7 @@ def confirm_table(request):
 def confirm_menu(request):
     return render(request, 'confirm_menu.html')
 
+@login_required(login_url='login')
 def resto_dashboard(request):
     return render(request, 'resto_dashboard.html')
 
@@ -130,9 +132,11 @@ def resto_menu(request):
 def resto_table(request):
     return render(request, 'resto_table.html')
 
+@login_required(login_url='login')
 def create_menu(request):
     return render(request, 'create_menu.html')
 
+@login_required(login_url='login')
 def create_table(request):
     return render(request, 'create_table.html')
 
@@ -156,4 +160,8 @@ def index(request):
             return redirect('index')
     else:
         return render(request, 'index.html')
-    
+
+@login_required(login_url='login')
+def logout(request):
+    auth.logout(request)
+    return redirect('index')
