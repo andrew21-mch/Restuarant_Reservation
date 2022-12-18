@@ -4,7 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 
-from .models import Menu
+from .models import Bookings, Menu, Restaurant
 
 
 # Views goes here
@@ -87,7 +87,7 @@ def signup_resto(request):
 
         if password1 == password2:
             if User.objects.filter(username=username).exists():
-                messages.info(request, 'restuarent already exist')
+                messages.info(request, 'username already exist')
                 return redirect('signup_resto')
             elif User.objects.filter(email=email).exists():
                 messages.info(request, 'email already exist') # gives an error if email already exist
@@ -103,6 +103,56 @@ def signup_resto(request):
             return redirect('signup_resto')
     else:
         return render(request, 'signup_resto.html')
+# start untested code
+# ==================================
+
+def add_resto(request):
+    if request.method == 'POST':
+        ownerId = request.user
+        print(ownerId)
+        name = request.POST['name']
+        location = request.POST['location']
+
+        if Restaurant.objects.filter(name=name).exists():
+            messages.info(request, 'restuarent already exist')
+            return redirect('create_resto')
+        else:
+            resto = Restaurant(owner=ownerId, name=name, location=location)
+            resto.save()
+            return redirect('resto_dashboard')
+    else:
+        return render(request, 'create_resto.html')
+
+
+
+def add_menu(request):
+    if request.method == 'POST':
+        name = request.POST['name']
+        price = request.POST['price']
+        description = request.POST['description']
+        image = request.FILES['image']
+
+        if Menu.objects.filter(name=name).exists():
+            messages.info(request, 'menu already exist')
+            return redirect('add_menu')
+        else:
+            menu = Menu(name=name, price=price, description=description, image=image)
+            menu.save()
+            return redirect('resto_menu')
+    else:
+        return render(request, 'add_menu.html')
+
+def view_orders(request):
+    resto = Restaurant.objects.filter(ownerId=request.user.id).exists()
+    if resto:
+        orders = Bookings.objects.filter(restoId=resto.id)
+        return render(request, 'view_orders.html', {'orders': orders})
+    else:
+        return redirect('resto_dashboard')
+
+# ==================================
+# end untested
+
 
 def resto_client(request):
     return render(request, 'resto_client.html')
@@ -124,7 +174,8 @@ def confirm_menu(request):
 
 @login_required(login_url='login')
 def resto_dashboard(request):
-    return render(request, 'resto_dashboard.html')
+    user_resto = Restaurant.objects.get(owner=request.user)
+    return render(request, 'resto_dashboard.html', {'user_resto': user_resto})
 
 def resto_menu(request):
     return render(request, 'resto_menu.html')
