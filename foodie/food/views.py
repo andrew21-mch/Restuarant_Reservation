@@ -1,7 +1,7 @@
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
 from django.shortcuts import render, redirect
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
 
 from .models import Bookings, Menu, Restaurant
@@ -173,6 +173,7 @@ def confirm_menu(request):
     return render(request, 'confirm_menu.html')
 
 @login_required(login_url='login')
+@user_passes_test(lambda u: u.is_staff, login_url='resto_client')
 def resto_dashboard(request):
     user_resto = Restaurant.objects.get(owner=request.user)
     return render(request, 'resto_dashboard.html', {'user_resto': user_resto})
