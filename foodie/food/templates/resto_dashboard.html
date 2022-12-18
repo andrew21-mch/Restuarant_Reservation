@@ -39,36 +39,11 @@
   <body> 
     <header>
     <div class="navigation">
-        <nav class="navbar navbar-expand-lg navbar-light ">
-            <div class="container-fluid ">
-            <a class="navbar-brand " href="#">Foodie</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-              <ul class="navbar-nav ">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">About Us</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Food</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Restaurant</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">Contact</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Mummy's Kitchen</a>
-              </li>	
-              <li class="nav-item">
-                <a class="nav-link btn btn-success" href="{% url 'logout' %}">Logout</a>
-              </li>    
-              </ul>		  
-            </div>
-            </div>
-          </nav>
+      {% if user.is_authenticated and user.is_staff %}
+      {% include 'auth-navbar.html' %}
+      {% else %}
+      {% include 'navbar.html' %}
+      {% endif %}
     </div>
 
     <br><br>

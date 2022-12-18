@@ -15,6 +15,7 @@ class Menu(models.Model):
    name = models.CharField(max_length=256)
    restuarant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
    price = models.IntegerField(max_length=10)
+   image = models.ImageField(upload_to='images/')
 
    def __str__(self):
        return self.name
