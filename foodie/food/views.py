@@ -3,6 +3,7 @@ from django.contrib import messages
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
+from django.core.files.storage import FileSystemStorage
 
 from .models import Bookings, Menu, Restaurant
 
@@ -125,22 +126,6 @@ def add_resto(request):
 
 
 
-def add_menu(request):
-    if request.method == 'POST':
-        name = request.POST['name']
-        price = request.POST['price']
-        description = request.POST['description']
-        image = request.FILES['image']
-
-        if Menu.objects.filter(name=name).exists():
-            messages.info(request, 'menu already exist')
-            return redirect('add_menu')
-        else:
-            menu = Menu(name=name, price=price, description=description, image=image)
-            menu.save()
-            return redirect('resto_menu')
-    else:
-        return render(request, 'add_menu.html')
 
 def view_orders(request):
     resto = Restaurant.objects.filter(ownerId=request.user.id).exists()
@@ -179,7 +164,8 @@ def resto_dashboard(request):
     return render(request, 'resto_dashboard.html', {'user_resto': user_resto})
 
 def resto_menu(request):
-    return render(request, 'resto_menu.html')
+    menus = Menu.objects.all()
+    return render(request, 'resto_menu.html', {'menus': menus})
 
 def resto_table(request):
     return render(request, 'resto_table.html')
@@ -187,6 +173,28 @@ def resto_table(request):
 @login_required(login_url='login')
 def create_menu(request):
     return render(request, 'create_menu.html')
+
+def add_menu(request):
+    if request.method == 'POST':
+        name = request.POST['menu_name']
+        price = request.POST['menu_price']
+        image = request.FILES['menu_image']
+
+        if Menu.objects.filter(name=name).exists():
+            messages.info(request, 'menu already exist')
+            return redirect('add_menu')
+        else:
+            # upload image to local storage
+            fs = FileSystemStorage(location='food/static/images')
+            filename = fs.save(image.name, image)
+            uploaded_file_url = fs.url(filename)
+            resto = Restaurant.objects.get(owner=request.user)
+            menu = Menu(name=name, restuarant=resto, price=price, image=uploaded_file_url)
+            menu.save()
+            messages.info(request, 'menu added successfully')
+            return redirect('resto_menu')
+    else:
+        return render(request, 'add_menu.html')
 
 @login_required(login_url='login')
 def create_table(request):
